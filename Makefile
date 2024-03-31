@@ -4,7 +4,7 @@ SRC	=	src/main.cpp			\
 
 OBJ	=	$(SRC:.cpp=.o)
 
-NAME	=	ChaosTriangle
+NAME	=	Triangle
 
 CXXFLAGS	=	-std=c++17 -g3
 

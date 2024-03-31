@@ -4,7 +4,7 @@ SFML::SFML(double i_size)
 {
     sf::VideoMode videoMode = sf::VideoMode::getDesktopMode();
 
-    this->window.create(sf::VideoMode(SCREEN_WIDTH * i_size, SCREEN_HEIGHT * i_size), "Chaos Triangle");
+    this->window.create(sf::VideoMode(SCREEN_WIDTH * i_size, SCREEN_HEIGHT * i_size), "Triangle Fractal Point Distribution");
     this->window.setFramerateLimit(60);
     this->window.setPosition(sf::Vector2i((videoMode.width - (SCREEN_WIDTH * i_size)) / 2, (videoMode.height - (SCREEN_HEIGHT * i_size)) / 2));
 }
@@ -41,18 +41,14 @@ void SFML::display(Triangle &i_triangle, int counter)
     
     text.setFont(font);
     text.setString("Points: " + std::to_string(counter));
-    text.setCharacterSize(32);
+    text.setCharacterSize(22);
+    text.setLetterSpacing(1);
     text.setFillColor(sf::Color::White);
     text.setPosition(10, 10);
 
     for (auto &point : i_triangle.getPointsVector()) {
 
-        if (i == 0) {
-            circle.setScale(2, 2);
-        }
-        else {
-            circle.setScale(1, 1);
-        }
+        circle.setScale(1, 1);
         circle.setFillColor(point.color);
         circle.setPosition(point.x, point.y);
         this->window.draw(circle);

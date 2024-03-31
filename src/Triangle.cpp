@@ -12,7 +12,6 @@ bool isInside(Point A, Point B, Point C, Point M)
     int Qc = Det(C, A, M);
 
     if ((Qa >= 0 && Qb >= 0 && Qc >= 0) || (Qa <= 0 && Qb <= 0 && Qc <= 0)) {
-        std::cout << "M : (" << M.x << ", " << M.y << ")" << std::endl;
         return true;
     }
     return false;
